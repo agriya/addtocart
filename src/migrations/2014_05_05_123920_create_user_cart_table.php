@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Config;
+
 class CreateUserCartTable extends Migration {
 
 	/**
@@ -17,7 +17,11 @@ class CreateUserCartTable extends Migration {
 			$table->increments('id');
 			$table->bigInteger('user_id');
 			$table->string('item_id');
+			$table->bigInteger('item_owner_id');
 			$table->integer('qty');
+			$table->dateTime('date_added');
+			$table->dateTime('date_modified');
+			$table->string('cookie_id', 50);
 		});
 	}
 
